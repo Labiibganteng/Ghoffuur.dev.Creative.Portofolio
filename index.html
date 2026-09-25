@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Labiib Al Ghoffuur - Portofolio</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        sage: {
+                            50: '#f4f7f4',
+                            100: '#e3eae3',
+                            500: '#87A987', // Sage Green Utama
+                            600: '#6c8b6c',
+                            700: '#556f55',
+                        },
+                        tosca: {
+                            light: '#e0f2f1',
+                            DEFAULT: '#00897b',
+                            dark: '#004d40'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- AOS (Animate On Scroll) Library untuk efek gerak saat scroll -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- FontAwesome untuk Ikon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* Custom smooth background gradient or floating blobs */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+        }
+        .animate-float {
+            animation: float 4s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="bg-sage-50 text-slate-700 font-sans antialiased selection:bg-sage-500 selection:text-white">
+
+    <!-- NAVBAR -->
+    <nav class="fixed top-0 left-0 w-full bg-white/80 backdrop-blur-md shadow-sm z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#home" class="text-xl font-bold text-sage-700 tracking-wide">
+                Labiib<span class="text-teal-600">.</span>
+            </a>
+            <div class="hidden md:flex space-x-8 font-medium text-sm">
+                <a href="#home" class="hover:text-sage-500 transition">Beranda</a>
+                <a href="#about" class="hover:text-sage-500 transition">Tentang</a>
+                <a href="#experience" class="hover:text-sage-500 transition">Pengalaman</a>
+                <a href="#achievements" class="hover:text-sage-500 transition">Pencapaian</a>
+                <a href="#certificates" class="hover:text-sage-500 transition">Sertifikat</a>
+                <a href="#contact" class="hover:text-sage-500 transition">Kontak</a>
+            </div>
+            <!-- Mobile Menu Button -->
+            <button id="menu-btn" class="md:hidden text-sage-700 focus:outline-none">
+                <i class="fa-solid fa-bars text-xl"></i>
+            </button>
+        </div>
+        <!-- Mobile Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t px-6 py-4 space-y-3">
+            <a href="#home" class="block hover:text-sage-500">Beranda</a>
+            <a href="#about" class="block hover:text-sage-500">Tentang</a>
+            <a href="#experience" class="block hover:text-sage-500">Pengalaman</a>
+            <a href="#achievements" class="block hover:text-sage-500">Pencapaian</a>
+            <a href="#certificates" class="block hover:text-sage-500">Sertifikat</a>
+            <a href="#contact" class="block hover:text-sage-500">Kontak</a>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section id="home" class="min-h-screen flex items-center pt-20 px-6 bg-gradient-to-br from-sage-100 via-sage-50 to-white overflow-hidden">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center w-full">
+            <div data-aos="fade-right" data-aos-duration="1000">
+                <span class="px-3 py-1 bg-sage-200 text-sage-700 rounded-full text-xs font-semibold uppercase tracking-wider">Halo, Selamat Datang</span>
+                <h1 class="text-4xl md:text-6xl font-ext500 text-slate-800 mt-4 leading-tight">
+                    Saya <span class="text-sage-600">Labiib Al Ghoffuur</span>
+                </h1>
+                <p class="text-lg text-slate-600 mt-4">Seorang Kreator & Developer yang berfokus pada desain UI/UX bersih serta pengembangan web modern.</p>
+                <div class="mt-8 flex space-x-4">
+                    <a href="#contact" class="px-6 py-3 bg-sage-500 text-white font-medium rounded-xl shadow-lg shadow-sage-500/30 hover:bg-sage-600 transition transform hover:-translate-y-1">Hubungi Saya</a>
+                    <a href="#experience" class="px-6 py-3 border border-sage-500 text-sage-700 font-medium rounded-xl hover:bg-sage-100 transition">Lihat Portofolio</a>
+                </div>
+            </div>
+            <!-- Elemen Foto dengan Animasi Melayang (Floating) -->
+            <div class="flex justify-center" data-aos="fade-left" data-aos-duration="1000">
+                <div class="relative w-72 h-72 md:w-96 md:h-96">
+                    <div class="absolute inset-0 bg-sage-300 rounded-full filter blur-xl opacity-50 animate-pulse"></div>
+                    <div class="relative w-full h-full bg-white rounded-3xl shadow-2xl p-4 border-4 border-white animate-float overflow-hidden flex items-center justify-center">
+                        <!-- Ganti URL gambar di bawah dengan foto Anda -->
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=500&auto=format&fit=crop&q=60" alt="Labiib Al Ghoffuur" class="w-full h-full object-cover rounded-2xl">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TENTANG SAYA -->
+    <section id="about" class="py-20 px-6 bg-white">
+        <div class="max-w-5xl mx-auto" data-aos="fade-up">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-slate-800">Tentang Saya</h2>
+                <div class="w-16 h-1 bg-sage-500 mx-auto mt-2 rounded-full"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="p-6 bg-sage-50 rounded-2xl shadow-sm border border-sage-100 hover:shadow-md transition" data-aos="fade-up" data-aos-delay="100">
+                    <div class="text-sage-600 text-3xl mb-4"><i class="fa-solid fa-code"></i></div>
+                    <h3 class="font-bold text-lg text-slate-800 mb-2">Web Development</h3>
+                    <p class="text-sm text-slate-600">Membangun website responsif, cepat, dan interaktif menggunakan teknologi modern.</p>
+                </div>
+                <div class="p-6 bg-sage-50 rounded-2xl shadow-sm border border-sage-100 hover:shadow-md transition" data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-sage-600 text-3xl mb-4"><i class="fa-solid fa-palette"></i></div>
+                    <h3 class="font-bold text-lg text-slate-800 mb-2">UI/UX Design</h3>
+                    <p class="text-sm text-slate-600">Merancang antarmuka pengguna yang memanjakan mata dengan palet warna Sage & Tosca.</p>
+                </div>
+                <div class="p-6 bg-sage-50 rounded-2xl shadow-sm border border-sage-100 hover:shadow-md transition" data-aos="fade-up" data-aos-delay="300">
+                    <div class="text-sage-600 text-3xl mb-4"><i class="fa-solid fa-rocket"></i></div>
+                    <h3 class="font-bold text-lg text-slate-800 mb-2">Fast Performance</h3>
+                    <p class="text-sm text-slate-600">Optimasi performa tinggi agar situs berjalan lancar di berbagai perangkat.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PENGALAMAN -->
+    <section id="experience" class="py-20 px-6 bg-sage-50">
+        <div class="max-w-4xl mx-auto" data-aos="fade-up">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-slate-800">Pengalaman Kerja & Proyek</h2>
+                <div class="w-16 h-1 bg-sage-500 mx-auto mt-2 rounded-full"></div>
+            </div>
+            <div class="space-y-8">
+                <!-- Item Pengalaman 1 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border-l-4 border-sage-500" data-aos="fade-left">
+                    <span class="text-xs font-semibold text-sage-600">2024 - Sekarang</span>
+                    <h3 class="text-xl font-bold text-slate-800 mt-1">Lead Frontend Developer</h3>
+                    <p class="text-sm text-slate-500 mb-3">PT Solusi Digital Kreatif</p>
+                    <p class="text-slate-600 text-sm">Bertanggung jawab membangun antarmuka web interaktif, mengintegrasikan sistem API, dan memimpin tim perancang UI.</p>
+                </div>
+                <!-- Item Pengalaman 2 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border-l-4 border-sage-500" data-aos="fade-left" data-aos-delay="100">
+                    <span class="text-xs font-semibold text-sage-600">2022 - 2024</span>
+                    <h3 class="text-xl font-bold text-slate-800 mt-1">UI/UX Designer Freelance</h3>
+                    <p class="text-sm text-slate-500 mb-3">Mandiri / Klien Global</p>
+                    <p class="text-slate-600 text-sm">Menyelesaikan lebih dari 20 proyek desain aplikasi mobile dan website korporat menggunakan tema warna natural.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PENCAPAIAN -->
+    <section id="achievements" class="py-20 px-6 bg-white">
+        <div class="max-w-5xl mx-auto" data-aos="fade-up">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-slate-800">Pencapaian</h2>
+                <div class="w-16 h-1 bg-sage-500 mx-auto mt-2 rounded-full"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="p-6 bg-sage-50 rounded-2xl border border-sage-200 flex items-start space-x-4" data-aos="zoom-in">
+                    <div class="bg-sage-500 text-white p-3 rounded-xl"><i class="fa-solid fa-trophy text-xl"></i></div>
+                    <div>
+                        <h3 class="font-bold text-lg text-slate-800">Juara 1 Hackathon Nasional</h3>
+                        <p class="text-sm text-slate-600 mt-1">Membuat aplikasi inovatif pengolahan limbah ramah lingkungan dalam waktu 24 jam.</p>
+                    </div>
+                </div>
+                <div class="p-6 bg-sage-50 rounded-2xl border border-sage-200 flex items-start space-x-4" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="bg-sage-500 text-white p-3 rounded-xl"><i class="fa-solid fa-award text-xl"></i></div>
+                    <div>
+                        <h3 class="font-bold text-lg text-slate-800">Top Contributor Open Source</h3>
+                        <p class="text-sm text-slate-600 mt-1">Kontributor aktif dalam repositori komunitas developer UI/UX Indonesia.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERTIFIKAT -->
+    <section id="certificates" class="py-20 px-6 bg-sage-50">
+        <div class="max-w-5xl mx-auto" data-aos="fade-up">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-slate-800">Sertifikat</h2>
+                <div class="w-16 h-1 bg-sage-500 mx-auto mt-2 rounded-full"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-sage-100" data-aos="flip-left">
+                    <div class="text-sage-600 font-semibold text-xs mb-2">Dicoding / Google</div>
+                    <h3 class="font-bold text-slate-800 mb-1">Expert Frontend Web Development</h3>
+                    <p class="text-xs text-slate-500">Dikeluarkan: Mei 2024</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-sage-100" data-aos="flip-left" data-aos-delay="100">
+                    <div class="text-sage-600 font-semibold text-xs mb-2">UI/UX Design Institute</div>
+                    <h3 class="font-bold text-slate-800 mb-1">Advanced User Experience Design</h3>
+                    <p class="text-xs text-slate-500">Dikeluarkan: Januari 2023</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-sage-100" data-aos="flip-left" data-aos-delay="200">
+                    <div class="text-sage-600 font-semibold text-xs mb-2">JavaScript Mastery</div>
+                    <h3 class="font-bold text-slate-800 mb-1">Modern JavaScript & Ecosystem</h3>
+                    <p class="text-xs text-slate-500">Dikeluarkan: November 2023</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- KONTAK -->
+    <section id="contact" class="py-20 px-6 bg-white">
+        <div class="max-w-3xl mx-auto" data-aos="fade-up">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-slate-800">Hubungi Saya</h2>
+                <div class="w-16 h-1 bg-sage-500 mx-auto mt-2 rounded-full"></div>
+                <p class="text-slate-600 mt-2 text-sm">Punya pertanyaan atau ingin bekerja sama? Kirimkan pesan di bawah.</p>
+            </div>
+            <form class="space-y-4" onsubmit="event.preventDefault(); alert('Pesan berhasil dikirim!');">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <input type="text" placeholder="Nama Anda" class="w-full px-4 py-3 bg-sage-50 border border-sage-200 rounded-xl focus:outline-none focus:border-sage-500" required>
+                    <input type="email" placeholder="Email Anda" class="w-full px-4 py-3 bg-sage-50 border border-sage-200 rounded-xl focus:outline-none focus:border-sage-500" required>
+                </div>
+                <textarea rows="4" placeholder="Pesan Anda..." class="w-full px-4 py-3 bg-sage-50 border border-sage-200 rounded-xl focus:outline-none focus:border-sage-500" required></textarea>
+                <button type="submit" class="w-full py-3 bg-sage-500 text-white font-medium rounded-xl shadow-lg shadow-sage-500/30 hover:bg-sage-600 transition">Kirim Pesan</button>
+            </form>
+            <!-- Social Icons -->
+            <div class="flex justify-center space-x-6 mt-8 text-xl text-sage-700">
+                <a href="https://github.com" target="_blank" class="hover:text-sage-500 transition"><i class="fa-brands fa-github"></i></a>
+                <a href="https://linkedin.com" target="_blank" class="hover:text-sage-500 transition"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://instagram.com" target="_blank" class="hover:text-sage-500 transition"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="py-6 bg-sage-700 text-white text-center text-sm">
+        <p>&copy; 2026 Labiib Al Ghoffuur. All rights reserved.</p>
+    </footer>
+
+    <!-- Script Animasi AOS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Inisialisasi efek gerak AOS
+        AOS.init({
+            once: true,
+            offset: 100,
+        });
+
+        // Script Mobile Menu Toggle
+        const btn = document.getElementById('menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
